@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Тоо таахх тоглоом</title>
+<style>
+body {
+background-color: #1a1a2e;
+color: white;
+text-align: center;
+font-family: Arial;
+padding-top: 50px;
+}
+button{
+background-color: #e94560;
+color: white;
+font-size: 18px;
+padding: 10px 30px;
+border: none;
+border-radius: 10px;	
+cursor: pointer;
+}
+input{
+font-size: 18px;
+padding: 8px;
+border-radius: 8px;
+border: none;
+text-align: center;
+}
+</style>
+</head>
+<body> 
+<h1>🎯 Дөлгөөнд зориулсан тоглоом</h1>
+<p>1-100 хооронд тоо бодож байна...</p>
+<input id="input" type="number" placeholder="Тоогоо бич">
+<br><br>
+<button onclick="taah()">Таах</button>
+<br><br>
+<button onclick="dahinTogloh()">🔄 Дахин тоглох</button>
+<p id="hariu"></p>
+
+<script>
+var nuurts = Math.floor(Math.random() * 100) + 1;
+var oroldt = 0;
+
+function taah() {
+var taasan = parseInt(document.getElementById("input").value);
+oroldt = oroldt + 1;
+if (taasan < nuurts) {
+document.getElementById("hariu").innerText = "⬆️Илүү их тоо бич андаа"; 
+} else if (taasan > nuurts) { 
+document.getElementById("hariu").innerText = "⬇️️️Арай багттоо  бичээрэо!";
+} else { 
+document.getElementById("hariu").innerText = "🎉 зөв!чи тоог тааж чадлаа баяр хүргэе🥳";
+} 
+}
+function dahinTogloh() {
+nuurts = Math.floor(Math.random() * 100) + 1; 
+oroldt = 0;
+document.getElementById("hariu").innerText = "";
+document.getElementById("input").value = "";
+}
+</script> 
+</body>
+</html>
